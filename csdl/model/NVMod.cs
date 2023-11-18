@@ -64,7 +64,7 @@ namespace csdl.model
         {
             cmd.CommandText = "Update tb_NhanVien set TenNV = N'" +  nvobj.TenNhanVien + "',"
                 + " GioiTinh = N'" + nvobj.GioiTinh + "', NamSinh = CONVERT(DATE,'" + nvobj.NamSinh + "',103),"
-                + " DiaChi = N'" + nvobj.DiaChi + "',SDT = '" + nvobj.DienThoai + "' Where MaNV = '" + nvobj.MaNhanVien + "'";
+                + " DiaChi = N'" + nvobj.DiaChi + "',SDT = '" + nvobj.DienThoai + "' Where MaNV like '" + nvobj.MaNhanVien + "'";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
