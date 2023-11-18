@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csdl.OBJECT
 {
-    internal class Nhanvien
+    class NhanvienOBJ
     {
         string _ma, _ten, _gioitinh, _diachi, _sdt, _matkhau, _namsinh;
 
@@ -52,8 +52,8 @@ namespace csdl.OBJECT
             set { _matkhau = value; }
         }
 
-        public Nhanvien() { }
-        public Nhanvien(string ma, string ten, string gioitinh, string namsinh, string diachi, string sdt)
+        public NhanvienOBJ() { }
+        public NhanvienOBJ(string ma, string ten, string gioitinh, string namsinh, string diachi, string sdt)
         {
             this._ma = ma;
             this._ten = ten;

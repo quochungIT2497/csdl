@@ -17,7 +17,7 @@ namespace csdl
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmNhanVien());
+            Application.Run(new FormMain());
         }
     }
 }

@@ -34,7 +34,7 @@
             this.comboBox_gioitinh = new System.Windows.Forms.ComboBox();
             this.txt_sdt = new System.Windows.Forms.TextBox();
             this.txt_diachi = new System.Windows.Forms.TextBox();
-            this.ten = new System.Windows.Forms.TextBox();
+            this.txt_ten = new System.Windows.Forms.TextBox();
             this.txt_ma = new System.Windows.Forms.TextBox();
             this.lbl_sdt = new System.Windows.Forms.Label();
             this.lbl_ = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.groupBox1.Controls.Add(this.comboBox_gioitinh);
             this.groupBox1.Controls.Add(this.txt_sdt);
             this.groupBox1.Controls.Add(this.txt_diachi);
-            this.groupBox1.Controls.Add(this.ten);
+            this.groupBox1.Controls.Add(this.txt_ten);
             this.groupBox1.Controls.Add(this.txt_ma);
             this.groupBox1.Controls.Add(this.lbl_sdt);
             this.groupBox1.Controls.Add(this.lbl_);
@@ -77,6 +77,7 @@
             // 
             // dtp_namsinh
             // 
+            this.dtp_namsinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_namsinh.Location = new System.Drawing.Point(559, 24);
             this.dtp_namsinh.Name = "dtp_namsinh";
             this.dtp_namsinh.Size = new System.Drawing.Size(131, 20);
@@ -86,8 +87,8 @@
             // 
             this.comboBox_gioitinh.FormattingEnabled = true;
             this.comboBox_gioitinh.Items.AddRange(new object[] {
-            "nam",
-            "nu"});
+            "Nam",
+            "Nữ"});
             this.comboBox_gioitinh.Location = new System.Drawing.Point(87, 61);
             this.comboBox_gioitinh.Name = "comboBox_gioitinh";
             this.comboBox_gioitinh.Size = new System.Drawing.Size(131, 21);
@@ -107,12 +108,12 @@
             this.txt_diachi.Size = new System.Drawing.Size(131, 20);
             this.txt_diachi.TabIndex = 8;
             // 
-            // ten
+            // txt_ten
             // 
-            this.ten.Location = new System.Drawing.Point(323, 24);
-            this.ten.Name = "ten";
-            this.ten.Size = new System.Drawing.Size(131, 20);
-            this.ten.TabIndex = 7;
+            this.txt_ten.Location = new System.Drawing.Point(323, 24);
+            this.txt_ten.Name = "txt_ten";
+            this.txt_ten.Size = new System.Drawing.Size(131, 20);
+            this.txt_ten.TabIndex = 7;
             // 
             // txt_ma
             // 
@@ -261,7 +262,6 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 16);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(686, 177);
@@ -271,6 +271,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_Huy);
@@ -279,6 +281,7 @@
             this.Controls.Add(this.btn_Xoa);
             this.Controls.Add(this.btn_Them);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmNhanVien";
             this.Text = "FrmNhanVien";
             this.Load += new System.EventHandler(this.FrmNhanVien_Load);
@@ -297,7 +300,7 @@
         private System.Windows.Forms.ComboBox comboBox_gioitinh;
         private System.Windows.Forms.TextBox txt_sdt;
         private System.Windows.Forms.TextBox txt_diachi;
-        private System.Windows.Forms.TextBox ten;
+        private System.Windows.Forms.TextBox txt_ten;
         private System.Windows.Forms.TextBox txt_ma;
         private System.Windows.Forms.Label lbl_sdt;
         private System.Windows.Forms.Label lbl_;

@@ -9,6 +9,7 @@ using csdl.OBJECT;
 using csdl.Control;
 using csdl.model;
 using csdl.VIEW;
+using csdl.Model;
 
 namespace csdl.model
 {
@@ -16,7 +17,7 @@ namespace csdl.model
     {
         ConnectSql con = new ConnectSql();
         SqlCommand cmd = new SqlCommand();
-
+        NhanvienOBJ nv = new NhanvienOBJ();
         public DataTable getdt()
         {
             DataTable dt = new DataTable();
@@ -37,16 +38,14 @@ namespace csdl.model
             }
             return dt;
         }
-        public bool AddData(Nhanvien nvobj)
+        public bool AddData(NhanvienOBJ nvobj)
         {
-            cmd.CommandText = " Inser into tb_NhanVien values('" + nvobj.MaNhanVien + "',N'" + nvobj.TenNhanVien
+            cmd.CommandText = " Insert into tb_NhanVien values('" + nvobj.MaNhanVien + "',N'" + nvobj.TenNhanVien
                 + "',N'" + nvobj.GioiTinh + "',CONVERT(DATE,'" + nvobj.NamSinh + "',103),"
                 + "N'" + nvobj.DiaChi + "','" + nvobj.DienThoai + "','" + nvobj.MatKhau + "')";
-            /*cmd.CommandText = " Inser into tb_NhanVien values('" + nvobj.MaNhanVien + "',N'" + nvobj.TenNhanVien
-                + "',N'" + nvobj.GioiTinh + "',CONVERT(DATE,'" + nvobj.NamSinh + "',103),"
-                + "N'" + nvobj.DiaChi + "','" + nvobj.DienThoai + "')";*/
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
+            //using(SqlConnection con = Connection.GetSqlConnection())
             try
             {
                 con.Openconn();
@@ -61,12 +60,12 @@ namespace csdl.model
             }
             return false;
         }
-        public bool UpData(Nhanvien nv)
+        public bool UpData(NhanvienOBJ nvobj)
         {
-            cmd.CommandText = "Update tb_NhanVien set TenNV= N'" + nv.TenNhanVien + "',"
-                + " GioiTinh = N'" + nv.GioiTinh + "', NamSinh = CONVERT(DATE,'" + nv.NamSinh + "',103"
-                + "DiaChi = N'" + nv.DiaChi + "',SDT = '" + nv.DienThoai + "' Where MaNV = '" + nv.MaNhanVien + "'";
-               cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Update tb_NhanVien set TenNV = N'" +  nvobj.TenNhanVien + "',"
+                + " GioiTinh = N'" + nvobj.GioiTinh + "', NamSinh = CONVERT(DATE,'" + nvobj.NamSinh + "',103),"
+                + " DiaChi = N'" + nvobj.DiaChi + "',SDT = '" + nvobj.DienThoai + "' Where MaNV = '" + nvobj.MaNhanVien + "'";
+            cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try
             {
@@ -83,9 +82,9 @@ namespace csdl.model
             return false;
         }
 
-        public bool UpMK(Nhanvien nv)
+        public bool UpMK(NhanvienOBJ nv)
         {
-            cmd.CommandText = "Update tb_NhanVien set MatKharu ='" + nv.MatKhau + "' where MaNV ='" + nv.MaNhanVien + "'";
+            cmd.CommandText = "Update tb_NhanVien set MatKhau ='" + nv.MatKhau + "' where MaNV ='" + nv.MaNhanVien + "'";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = con.Connection;
             try

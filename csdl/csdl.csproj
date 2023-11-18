@@ -49,7 +49,7 @@
     <Compile Include="Control\NVCtr.cs" />
     <Compile Include="model\ConnectSql.cs" />
     <Compile Include="model\NVMod.cs" />
-    <Compile Include="OBJECT\Nhanvien.cs" />
+    <Compile Include="OBJECT\NhanvienOBJ.cs" />
     <Compile Include="OBJECT\QLBH.cs" />
     <Compile Include="VIEW\FormMain.cs">
       <SubType>Form</SubType>

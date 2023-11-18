@@ -16,21 +16,26 @@ namespace csdl.Control
         {
             return nvmod.getdt();
         }
-        public bool AddData(Nhanvien nvobj)
+        public bool AddData(NhanvienOBJ nvobj)
         {
             return nvmod.AddData(nvobj);
         }
-        public bool UpData(Nhanvien nvobj) 
+        public bool UpData(NhanvienOBJ nvobj) 
         {
             return nvmod.UpData(nvobj);
         }
-        public bool UpdMK(Nhanvien nvobj)
+        public bool UpdMK(NhanvienOBJ nvobj)
         {
             return nvmod.UpMK(nvobj);
         }
         public bool DelData(string ma)
         {
             return nvmod.DelData(ma);
+        }
+
+        internal void AddData(object v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

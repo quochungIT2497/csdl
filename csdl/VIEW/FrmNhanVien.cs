@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using csdl.Control;
 using csdl.Model;
+using System.Diagnostics;
 
 namespace csdl.VIEW
 {
@@ -21,12 +22,14 @@ namespace csdl.VIEW
             InitializeComponent();
         }
         NVCtr nvctr = new NVCtr();
-        Nhanvien nv = new Nhanvien();
+        NhanvienOBJ nv;
+        private NhanvienOBJ ValueTxtBox()
+        {
+                return nv = new NhanvienOBJ(txt_ma.Text, txt_ten.Text, comboBox_gioitinh.Text, dtp_namsinh.Text, txt_diachi.Text, txt_sdt.Text);
+        }
         private void btn_Them_Click(object sender, EventArgs e)
         {
-          
-           
-            nvctr.AddData(nv);
+            nvctr.AddData(ValueTxtBox());
             FrmNhanVien_Load(sender, e);
         }
 
@@ -37,15 +40,14 @@ namespace csdl.VIEW
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            string ma = txt_ma.Text;
-            nvctr.DelData(ma);
+            ValueTxtBox();
+            nvctr.DelData(nv.MaNhanVien);
             FrmNhanVien_Load(sender, e);
         }
-
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            nvctr.UpData(nv);
-            FrmNhanVien_Load(sender,e);
+            nvctr.UpData(ValueTxtBox());
+            FrmNhanVien_Load(sender, e);
         }
     }
 }

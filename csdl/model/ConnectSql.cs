@@ -17,7 +17,7 @@ namespace csdl.model
 
         public ConnectSql()
         {
-            StrCon = @"Data Source=SITD-LAB02-S04\SQLEXPRESS;Initial Catalog=QL_BanHang;Integrated Security=True;";
+            StrCon = @"Data Source=DESKTOP-6HJIUMS;Initial Catalog=QL_BanHang;Integrated Security=True;";
             conn = new SqlConnection(StrCon);
         }
 

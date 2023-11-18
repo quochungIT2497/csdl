@@ -1,4 +1,5 @@
 ﻿using csdl.Model;
+using csdl.VIEW;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,20 +20,12 @@ namespace csdl
             InitializeComponent();
         }
         Command command = new Command();
-        private void FormMain_Load(object sender, EventArgs e)
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            try
-            {
-               //command.DT("Select * from tb_HangHoa");
-            }
-            catch (SqlException ex)
-            {
-                DialogResult error = MessageBox.Show("Không lấy được dữ liệu", "Lỗi", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                while (error == DialogResult.Retry)
-                {
-                    FormMain_Load(sender, e);
-                }
-            }
+            FrmNhanVien fnv = new FrmNhanVien();
+            fnv.MdiParent = this;
+            fnv.Show();
         }
     }
 }
